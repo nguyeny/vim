@@ -42,7 +42,10 @@ set softtabstop=4
 map <F3> :retab <CR>
 
 " NERDTree settings
-autocmd vimenter * if !argc() | NERDTree | endif
+" autocmd vimenter * if !argc() | NERDTree | endif
+autocmd VimEnter * NERDTree
+"autocmd BufEnter NERDTreeMirror
+autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Highlight errors and long lines
